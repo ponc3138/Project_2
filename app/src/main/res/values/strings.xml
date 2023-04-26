@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Project 2</string>
+    <string name="besbai">BesBai</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">LOGIN</string>
+    <string name="don_t_have_an_account">Don\'t Have An Account?</string>
+    <string name="create_account">CREATE ACCOUNT</string>
+</resources>
