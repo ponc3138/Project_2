@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
     Button createAccount;
+    Button logIn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 // Code to execute when button is clicked
                 Intent intent = new Intent(getApplicationContext(), New_account_activity.class);
+                startActivity(intent);
+            }
+        });
+
+        logIn = binding.loginButton;
+        logIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), logIn_Activity.class);
                 startActivity(intent);
             }
         });
