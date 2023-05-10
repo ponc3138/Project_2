@@ -15,4 +15,6 @@
     <string name="create_account_page">Create Account</string>
     <string name="new_username">New Username</string>
     <string name="retype_password">Retype Password</string>
+    <string name="create_user">Create User</string>
+    <string name="search_for_product">Search for Product</string>
 </resources>

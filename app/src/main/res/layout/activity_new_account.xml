@@ -30,7 +30,7 @@
         android:layout_margin="10dp"
         android:padding="20dp"
         android:drawableStart="@drawable/baseline_person_24"
-        android:drawablePadding="10dp"/>
+        android:drawablePadding="10dp" />
 
     <EditText
         android:id="@+id/password"
@@ -47,7 +47,8 @@
         android:hint="@string/password"
         android:padding="20dp"
         android:textColor="@color/white"
-        android:textColorHint="@color/white" />
+        android:textColorHint="@color/white"
+        android:inputType="textPassword"/>
 
     <EditText
         android:id="@+id/retype_password"
@@ -64,14 +65,15 @@
         android:hint="@string/retype_password"
         android:padding="20dp"
         android:textColor="@color/white"
-        android:textColorHint="@color/white" />
+        android:textColorHint="@color/white"
+        android:inputType="textPassword"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/create_account_page_button"
         android:layout_below="@id/retype_password"
-        android:text="Create User"
+        android:text="@string/create_user"
         android:backgroundTint="@color/material_on_surface_stroke"
         android:layout_centerHorizontal="true"
         android:layout_margin="40dp" />
