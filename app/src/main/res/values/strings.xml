@@ -17,4 +17,6 @@
     <string name="retype_password">Retype Password</string>
     <string name="create_user">Create User</string>
     <string name="search_for_product">Search for Product</string>
+    <string name="search_hint">Search</string>
+    <string name="welcome_admin">Welcome Admin</string>
 </resources>

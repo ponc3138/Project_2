@@ -4,13 +4,14 @@ import android.content.Context;
 
 import androidx.annotation.NonNull;
 import androidx.room.Database;
+import androidx.room.Insert;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import java.util.concurrent.Executors;
 
-@Database(entities = {User.class}, version = 1)
+@Database(entities = {User.class, Product.class}, version = 2)
 public abstract class AppDatabase extends RoomDatabase {
 
     public abstract UserDAO userDao();
@@ -48,6 +49,12 @@ public abstract class AppDatabase extends RoomDatabase {
                             // Insert users
                             INSTANCE.userDao().insert(testUser);
                             INSTANCE.userDao().insert(adminUser);
+
+                            //Predefined product
+                            Product product = new Product("Apple TV", "100", "1", "10 inch TV from Apple");
+
+                            //Insert Product
+                            INSTANCE.ProductDao().insert(product);
                         }
                     });
                 }

@@ -43,5 +43,14 @@ public class logIn_Activity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        adminButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Code to execute when button is clicked
+                Intent intent = new Intent(getApplicationContext(), AdminActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
