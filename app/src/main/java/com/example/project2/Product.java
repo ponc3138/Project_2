@@ -1,61 +1,65 @@
 package com.example.project2;
 
-
-import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity
+@Entity(tableName = "products")
 public class Product {
-
     @PrimaryKey(autoGenerate = true)
-    public int prodId;
+    private int id;
+    private String productName;
+    private String productPrice;
 
-    @ColumnInfo(name = "Product")
-    public String Product;
+    private String productQuantity;
 
-    @ColumnInfo(name = "price")
-    public int price;
+    private String productDetails;
 
-    @ColumnInfo(name = "Quantity")
-    public int Quantity;
 
-    public Product(int prodId, String product, int price, int quantity) {
-        this.prodId = prodId;
-        this.Product = product;
-        this.price = price;
-        this.Quantity = quantity;
+    public Product(String productName, String productPrice, String productQuantity, String productDetails) {
+        this.productName = productName;
+        this.productPrice = productPrice;
+        this.productQuantity = productQuantity;
+        this.productDetails = productDetails;
+
     }
 
-    public int getProdId() {
-        return prodId;
+    public int getId() {
+        return id;
     }
 
-    public void setProdId(int prodId) {
-        this.prodId = prodId;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getProduct() {
-        return Product;
+    public String getProductName() {
+        return productName;
     }
 
-    public void setProduct(String product) {
-        Product = product;
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
-    public int getPrice() {
-        return price;
+    public String getProductPrice() {
+        return productPrice;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
+    public void setProductPrice(String productPrice) {
+        this.productPrice = productPrice;
     }
 
-    public int getQuantity() {
-        return Quantity;
+    public String getProductQuantity() {
+        return productQuantity;
     }
 
-    public void setQuantity(int quantity) {
-        Quantity = quantity;
+    public void setProductQuantity(String productQuantity) {
+        this.productQuantity = productQuantity;
+    }
+
+    public String getProductDetails() {
+        return productDetails;
+    }
+
+    public void setProductDetails(String productDetails) {
+        this.productDetails = productDetails;
     }
 }

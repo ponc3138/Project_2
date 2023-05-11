@@ -1,22 +1,24 @@
 package com.example.project2;
 
 import androidx.room.Dao;
+import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
-
-import java.util.List;
+import androidx.room.Update;
 
 @Dao
 public interface ProductDao {
+
     @Insert
-    void insertrecord(Product product);
+    void insert(Product product);
 
-    @Query("SELECT EXISTS(SELECT * FROM Product WHERE prodId = :productid)")
-    boolean is_exist(int productid);
+    @Delete
+    void delete(Product product);
 
-    @Query("SELECT * FROM Product")
-    List<Product> getallproduct();
+    @Update
+    void update(Product product);
 
-    @Query("DELETE FROM Product WHERE prodId = :id")
-    void deleteById(int id);
+    @Query("SELECT * FROM products WHERE LOWER(productName) = LOWER(:productName)")
+    Product getProductByName(String productName);
+
 }

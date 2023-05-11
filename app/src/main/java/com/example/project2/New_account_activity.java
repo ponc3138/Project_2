@@ -33,6 +33,7 @@ public class New_account_activity extends AppCompatActivity {
                 final String password = passwordEditText.getText().toString();
                 final String retypedPassword = retypePasswordEditText.getText().toString();
 
+                //TODO: UPDATE CODE
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
