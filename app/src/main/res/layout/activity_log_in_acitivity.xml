@@ -32,14 +32,17 @@
         android:text="@string/search" />
 
     <Button
-    android:layout_width="160sp"
-    android:layout_height="55sp"
-    android:id="@+id/shopping_cart"
-    android:layout_below="@id/search_message"
-    android:text="@string/shopping_cart"
-    android:backgroundTint="@color/material_on_surface_stroke"
-    android:layout_centerHorizontal="true"
-    android:layout_margin="20dp" />
+        android:id="@+id/shopping_cart"
+        android:layout_width="160sp"
+        android:layout_height="55sp"
+        android:layout_below="@id/search_message"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/material_on_surface_stroke"
+        android:text="@string/shopping_cart" />
 
     <Button
         android:layout_width="160sp"
