@@ -25,6 +25,7 @@ public class ShoppingCartActivity extends AppCompatActivity {
         ListView listView = findViewById(R.id.cart_items);
 
         Button checkoutButton = findViewById(R.id.checkout);
+        Button returnButton = findViewById(R.id.return_button);
 
         cartItems = new ArrayList<>();
 
@@ -40,6 +41,13 @@ public class ShoppingCartActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(ShoppingCartActivity.this, CheckoutActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        returnButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
 
