@@ -13,6 +13,8 @@ public class logIn_Activity extends AppCompatActivity {
     Button signOutButton;
     Button searchButton;
 
+    Button checkoutButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +23,8 @@ public class logIn_Activity extends AppCompatActivity {
         adminButton = findViewById(R.id.admin);
         signOutButton = findViewById(R.id.sign_out);
         searchButton = findViewById(R.id.search_message);
+        checkoutButton = findViewById(R.id.checkout);
+
 
         boolean isAdmin = getIntent().getBooleanExtra("isAdmin", true);
         if(!isAdmin) {
@@ -52,5 +56,12 @@ public class logIn_Activity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+            checkoutButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(getApplicationContext(), CheckoutActivity.class);
+                    startActivity(intent);
+                }
+            });
     }
 }
