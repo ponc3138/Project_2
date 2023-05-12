@@ -6,8 +6,10 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
+import java.util.List;
+
 @Dao
-public interface ProductDao {
+public interface ProductDAO {
 
     @Insert
     void insert(Product product);
@@ -20,5 +22,12 @@ public interface ProductDao {
 
     @Query("SELECT * FROM products WHERE LOWER(productName) = LOWER(:productName)")
     Product getProductByName(String productName);
+
+    @Query("SELECT * FROM products")
+    List<Product> getAllProducts();
+
+    @Query("SELECT * FROM products WHERE id = :id")
+    public Product getProductById(int id);
+
 
 }

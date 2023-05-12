@@ -54,11 +54,11 @@ public class MainActivity extends AppCompatActivity {
                         User user = AppDatabase.getDatabase(MainActivity.this).userDao().getUser(username, password);
                         if (user != null) {
                             // Login successful
-                            Intent intent = new Intent(getApplicationContext(), logIn_Activity.class);
                             boolean isAdmin = user.getUsername().equals("admin2") && user.getPassword().equals("admin2");
+                            Intent intent = new Intent(getApplicationContext(), logIn_Activity.class);
+                            intent.putExtra("username", username);
                             intent.putExtra("isAdmin", isAdmin);
                             startActivity(intent);
-
                         } else {
                             // Login failed, show error message
                             runOnUiThread(new Runnable() {

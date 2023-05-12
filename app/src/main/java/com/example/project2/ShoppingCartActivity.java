@@ -14,8 +14,7 @@ import java.util.List;
 
 public class ShoppingCartActivity extends AppCompatActivity {
 
-    private List<Product> cartItems;
-
+    List<ShoppingCart> cartItems;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,14 +26,31 @@ public class ShoppingCartActivity extends AppCompatActivity {
         Button checkoutButton = findViewById(R.id.checkout);
         Button returnButton = findViewById(R.id.return_button);
 
-        cartItems = new ArrayList<>();
+        String username = getIntent().getStringExtra("username");
 
-        cartItems.add(new Product("Product 1", "9.99","5","Details"));
-        cartItems.add(new Product("Product 2", "8.99","4","Details"));
-        cartItems.add(new Product("Product 2", "7.99","3","Details"));
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                AppDatabase db = AppDatabase.getDatabase(getApplicationContext());
+                UserDAO userDao = db.userDao();
+                User currentUser = userDao.getUserByUsername(username);
+                int currentUserId = currentUser.getId();
+                cartItems = db.shoppingCartDAO().getAllCartItems(currentUserId);
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        ArrayAdapter<ShoppingCart> adapter = new ArrayAdapter<>(ShoppingCartActivity.this, android.R.layout.simple_list_item_1, cartItems);
+                        listView.setAdapter(adapter);
+                    }
+                });
+            }
+        }).start();
 
-        ArrayAdapter<Product> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, cartItems);
-        listView.setAdapter(adapter);
+//        cartItems.add(new Product("Product 1", 9.99,5,"Details"));
+//        cartItems.add(new Product("Product 2", 8.99,4,"Details"));
+//        cartItems.add(new Product("Product 2", 7.99,3,"Details"));
+
+
 
         checkoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,9 +66,6 @@ public class ShoppingCartActivity extends AppCompatActivity {
                 finish();
             }
         });
-
-
-
 
     }
 }

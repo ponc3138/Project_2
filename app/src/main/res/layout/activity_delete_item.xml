@@ -7,12 +7,11 @@
     android:background="@drawable/background2"
     tools:context=".ProductsActivity">
 
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/products"
-        android:text="@string/products"
+        android:id="@+id/delete_product_text"
+        android:text="@string/click_product_to_delete"
         android:textColor="@color/white"
         android:textSize="35sp"
         android:textStyle="bold"
@@ -23,7 +22,7 @@
         android:id="@+id/products_in_inventory"
         android:layout_width="match_parent"
         android:layout_height="489dp"
-        android:layout_below="@id/products"
+        android:layout_below="@id/delete_product_text"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="34dp"
         android:gravity="center"

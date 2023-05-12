@@ -1,9 +1,9 @@
 package com.example.project2;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,8 +13,9 @@ import android.widget.Toast;
 public class AdminActivity extends AppCompatActivity {
 
     Button addItem;
-
+    Button deleteItem;
     Dialog dialog;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,11 +23,11 @@ public class AdminActivity extends AppCompatActivity {
         setContentView(R.layout.activity_admin);
 
         addItem = findViewById(R.id.add_item_button);
+        deleteItem = findViewById(R.id.delete_item_button);
 
         addItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // create a new Dialog object
                 dialog = new Dialog(AdminActivity.this);
 
                 dialog.setContentView(R.layout.add_item_dialog);
@@ -47,21 +48,32 @@ public class AdminActivity extends AppCompatActivity {
                     }
                 });
 
-                // set an OnClickListener on the Add button
                 buttonAdd.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         // get the text entered by the user in the EditText views
                         String productName = editTextProductName.getText().toString();
-                        String price = editTextPrice.getText().toString();
-                        String quantity = editTextQuantity.getText().toString();
+                        String priceString = editTextPrice.getText().toString();
+                        final Double price;
+                        try {
+                            price = Double.parseDouble(priceString);
+                        } catch (NumberFormatException e) {
+                            return;
+                        }
+                        String quantityString = editTextQuantity.getText().toString();
+                        final int quantity;
+                        try {
+                            quantity = Integer.parseInt(quantityString);
+                        } catch(NumberFormatException e) {
+                            return;
+                        }
                         String details = editTextDetails.getText().toString();
 
                         new Thread(new Runnable() {
                             @Override
                             public void run() {
                                 AppDatabase db = AppDatabase.getDatabase(getApplicationContext());
-                                ProductDao productDao = db.ProductDao();
+                                ProductDAO productDao = db.ProductDao();
 
                                 final Product existingProduct = productDao.getProductByName(productName);
                                 if(existingProduct != null) {
@@ -74,24 +86,27 @@ public class AdminActivity extends AppCompatActivity {
                                 } else {
                                     Product newProduct = new Product(productName, price, quantity, details);
                                     productDao.insert(newProduct);
-
                                     runOnUiThread(new Runnable() {
                                         @Override
                                         public void run() {
                                             Toast.makeText(AdminActivity.this, productName + " added successfully!", Toast.LENGTH_SHORT).show();
                                         }
                                     });
-
                                 }
-
                             }
-                        });
-                        // dismiss the dialog after the user has added the item
+                        }).start();
                         dialog.dismiss();
                     }
                 });
-                // show the dialog
                 dialog.show();
+            }
+        });
+
+        deleteItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AdminActivity.this, DeleteItemActivity.class);
+                startActivity(intent);
             }
         });
     }

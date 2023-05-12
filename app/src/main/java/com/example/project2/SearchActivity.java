@@ -26,7 +26,7 @@ public class SearchActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         AppDatabase db = AppDatabase.getDatabase(getApplicationContext());
-                        ProductDao productDao = db.ProductDao();
+                        ProductDAO productDao = db.ProductDao();
                         final Product product = productDao.getProductByName(productSearched);
 
                         //TODO: SHOW PRODUCT DETAILS ON SCREEN

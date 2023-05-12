@@ -29,8 +29,9 @@ public class logIn_Activity extends AppCompatActivity {
         checkoutButton = findViewById(R.id.checkout);
         shoppingCartButton = findViewById(R.id.shopping_cart);
 
-
+        String username = getIntent().getStringExtra("username");
         boolean isAdmin = getIntent().getBooleanExtra("isAdmin", true);
+
         if(!isAdmin) {
             adminButton.setVisibility(View.GONE);
         }
@@ -54,8 +55,8 @@ public class logIn_Activity extends AppCompatActivity {
         productsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Code to execute when button is clicked
                 Intent intent = new Intent(getApplicationContext(), ProductsActivity.class);
+                intent.putExtra("username", username);
                 startActivity(intent);
             }
         });
@@ -80,6 +81,7 @@ public class logIn_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), ShoppingCartActivity.class);
+                intent.putExtra("username", username);
                 startActivity(intent);
             }
         });

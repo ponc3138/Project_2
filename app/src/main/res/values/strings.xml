@@ -22,4 +22,8 @@
     <string name="checkout_text">Checkout</string>
     <string name="Payment">Payment</string>
     <string name="Return">Return</string>
+    <string name="products_message">Products</string>
+    <string name="products">Products</string>
+    <string name="add_item">Add Item</string>
+    <string name="click_product_to_delete">Click Product to Delete</string>
 </resources>
