@@ -11,7 +11,7 @@ public class logIn_Activity extends AppCompatActivity {
 
     Button adminButton;
     Button signOutButton;
-    Button searchButton;
+    Button productsButton;
 
     Button checkoutButton;
 
@@ -24,7 +24,8 @@ public class logIn_Activity extends AppCompatActivity {
 
         adminButton = findViewById(R.id.admin);
         signOutButton = findViewById(R.id.sign_out);
-        searchButton = findViewById(R.id.search_message);
+        productsButton = findViewById(R.id.products);
+//        searchButton = findViewById(R.id.search_message);
         checkoutButton = findViewById(R.id.checkout);
         shoppingCartButton = findViewById(R.id.shopping_cart);
 
@@ -42,11 +43,19 @@ public class logIn_Activity extends AppCompatActivity {
             }
         });
 
-        searchButton.setOnClickListener(new View.OnClickListener() {
+//        searchButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                // Code to execute when button is clicked
+//                Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
+//                startActivity(intent);
+//            }
+//        });
+        productsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Code to execute when button is clicked
-                Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
+                //Code to execute when button is clicked
+                Intent intent = new Intent(getApplicationContext(), ProductsActivity.class);
                 startActivity(intent);
             }
         });

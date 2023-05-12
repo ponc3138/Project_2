@@ -19,7 +19,7 @@
         android:gravity="center" />
 
     <Button
-        android:id="@+id/search_message"
+        android:id="@+id/products"
         android:layout_width="160sp"
         android:layout_height="55sp"
         android:layout_below="@id/welcome_message"
@@ -29,13 +29,13 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/material_on_surface_stroke"
-        android:text="@string/search" />
+        android:text="@string/products_message" />
 
     <Button
         android:id="@+id/shopping_cart"
         android:layout_width="160sp"
         android:layout_height="55sp"
-        android:layout_below="@id/search_message"
+        android:layout_below="@id/products"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
