@@ -15,6 +15,8 @@ public class logIn_Activity extends AppCompatActivity {
 
     Button checkoutButton;
 
+    Button shoppingCartButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +26,7 @@ public class logIn_Activity extends AppCompatActivity {
         signOutButton = findViewById(R.id.sign_out);
         searchButton = findViewById(R.id.search_message);
         checkoutButton = findViewById(R.id.checkout);
+        shoppingCartButton = findViewById(R.id.shopping_cart);
 
 
         boolean isAdmin = getIntent().getBooleanExtra("isAdmin", true);
@@ -63,5 +66,13 @@ public class logIn_Activity extends AppCompatActivity {
                     startActivity(intent);
                 }
             });
+
+        shoppingCartButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ShoppingCartActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

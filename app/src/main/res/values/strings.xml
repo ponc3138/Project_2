@@ -20,4 +20,5 @@
     <string name="search_hint">Search</string>
     <string name="welcome_admin">Welcome Admin</string>
     <string name="checkout_text">Checkout</string>
+    <string name="Payment">Payment</string>
 </resources>
