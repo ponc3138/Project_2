@@ -35,7 +35,9 @@ public class ShoppingCartActivity extends AppCompatActivity {
                 UserDAO userDao = db.userDao();
                 User currentUser = userDao.getUserByUsername(username);
                 int currentUserId = currentUser.getId();
-                cartItems = db.shoppingCartDAO().getAllCartItems(currentUserId);
+//                cartItems = db.shoppingCartDAO().getAllCartItems(currentUserId);
+                cartItems = db.shoppingCartDAO().getAllCartItems();
+
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {

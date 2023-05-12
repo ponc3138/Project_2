@@ -5,22 +5,23 @@ import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "shopping_cart",
-        foreignKeys = @ForeignKey(entity = User.class,
-                parentColumns = "id",
-                childColumns = "user_id",
-                onDelete = ForeignKey.CASCADE))
+//@Entity(tableName = "shopping_cart",
+//        foreignKeys = @ForeignKey(entity = User.class,
+//                parentColumns = "id",
+//                childColumns = "user_id",
+//                onDelete = ForeignKey.CASCADE))
+@Entity(tableName = "shopping_cart")
 public class ShoppingCart {
 
     @PrimaryKey(autoGenerate = true)
     private int id;
-    @ColumnInfo(name = "product_name")
+//    @ColumnInfo(name = "product_name")
     private String name;
     private int quantity;
     private double price;
 
-    @ColumnInfo(name = "user_id")
-    private int userId;
+//    @ColumnInfo(name = "user_id")
+//    private int userId;
 
     public ShoppingCart(String name, int quantity, double price) {
         this.name = name;
@@ -62,16 +63,16 @@ public class ShoppingCart {
 
     @Override
     public String toString() {
-        return name + "  " + quantity + "     $" + price;
+        return name + "  " + "   $" + price;
     }
 
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
+//    public int getUserId() {
+//        return userId;
+//    }
+//
+//    public void setUserId(int userId) {
+//        this.userId = userId;
+//    }
 
 
 }

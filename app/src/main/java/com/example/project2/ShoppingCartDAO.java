@@ -12,11 +12,11 @@ import java.util.List;
 @Dao
 public interface ShoppingCartDAO {
 
-//    @Insert
-//    void insert(ShoppingCart item);
-
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert
     void insert(ShoppingCart item);
+
+//    @Insert(onConflict = OnConflictStrategy.REPLACE)
+//    void insert(ShoppingCart item);
 
     @Update
     void update(ShoppingCart item);
@@ -24,9 +24,12 @@ public interface ShoppingCartDAO {
     @Delete
     void delete(ShoppingCart item);
 
-    @Query("SELECT * FROM shopping_cart WHERE user_id = :userId")
-    List<ShoppingCart> getAllCartItems(int userId);
+    @Query("SELECT * FROM shopping_cart")
+    List<ShoppingCart> getAllCartItems();
 
-    @Query("SELECT EXISTS(SELECT 1 FROM users WHERE id = :userId)")
-    boolean userExists(int userId);
+//    @Query("SELECT * FROM shopping_cart WHERE user_id = :userId")
+//    List<ShoppingCart> getAllCartItems(int userId);
+//
+//    @Query("SELECT EXISTS(SELECT 1 FROM users WHERE id = :userId)")
+//    boolean userExists(int userId);
 }

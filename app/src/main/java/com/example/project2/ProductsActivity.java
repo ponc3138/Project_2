@@ -54,17 +54,17 @@ public class ProductsActivity extends AppCompatActivity {
                                         AppDatabase db = AppDatabase.getDatabase(getApplicationContext());
                                         ShoppingCartDAO shoppingCartDAO = db.shoppingCartDAO();
                                         Product product = db.ProductDao().getProductById(productSelectedId);
-                                        UserDAO userDao = db.userDao();
-                                        User currentUser = userDao.getUserByUsername(username);
-                                        int currentUserId = currentUser.getId();
-                                        if(db.shoppingCartDAO().userExists(currentUserId)) {
-                                            ShoppingCart shoppingCartItem = new ShoppingCart(productSelected.getProductName(), productSelected.getProductQuantity(), productSelected.getProductPrice());
-                                            shoppingCartDAO.insert(shoppingCartItem);
-                                        } else {
-                                            return;
-                                        }
-//                                        ShoppingCart shoppingCartItem = new ShoppingCart(productSelected.getProductName(), productSelected.getProductQuantity(), productSelected.getProductPrice());
-//                                        shoppingCartDAO.insert(shoppingCartItem);
+//                                        UserDAO userDao = db.userDao();
+//                                        User currentUser = userDao.getUserByUsername(username);
+//                                        int currentUserId = currentUser.getId();
+//                                        if(db.shoppingCartDAO().userExists(currentUserId)) {
+//                                            ShoppingCart shoppingCartItem = new ShoppingCart(productSelected.getProductName(), productSelected.getProductQuantity(), productSelected.getProductPrice());
+//                                            shoppingCartDAO.insert(shoppingCartItem);
+//                                        } else {
+//                                            return;
+//                                        }
+                                        ShoppingCart shoppingCartItem = new ShoppingCart(productSelected.getProductName(), productSelected.getProductQuantity(), productSelected.getProductPrice());
+                                        shoppingCartDAO.insert(shoppingCartItem);
                                         runOnUiThread(new Runnable() {
                                             @Override
                                             public void run() {
