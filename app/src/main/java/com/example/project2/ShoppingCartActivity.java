@@ -28,9 +28,9 @@ public class ShoppingCartActivity extends AppCompatActivity {
 
         cartItems = new ArrayList<>();
 
-        cartItems.add(new Product("Product 1", 9.99,5,"Details"));
-        cartItems.add(new Product("Product 2", 8.99,4,"Details"));
-        cartItems.add(new Product("Product 2", 7.99,3,"Details"));
+        cartItems.add(new Product("Product 1", "9.99","5","Details"));
+        cartItems.add(new Product("Product 2", "8.99","4","Details"));
+        cartItems.add(new Product("Product 2", "7.99","3","Details"));
 
         ArrayAdapter<Product> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, cartItems);
         listView.setAdapter(adapter);

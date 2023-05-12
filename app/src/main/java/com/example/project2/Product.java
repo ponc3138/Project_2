@@ -8,14 +8,14 @@ public class Product {
     @PrimaryKey(autoGenerate = true)
     private int id;
     private String productName;
-    private double productPrice;
+    private String productPrice;
 
-    private int productQuantity;
+    private String productQuantity;
 
     private String productDetails;
 
 
-    public Product(String productName, double productPrice, int productQuantity, String productDetails) {
+    public Product(String productName, String productPrice, String productQuantity, String productDetails) {
         this.productName = productName;
         this.productPrice = productPrice;
         this.productQuantity = productQuantity;
@@ -39,19 +39,19 @@ public class Product {
         this.productName = productName;
     }
 
-    public double getProductPrice() {
+    public String getProductPrice() {
         return productPrice;
     }
 
-    public void setProductPrice(double productPrice) {
+    public void setProductPrice(String productPrice) {
         this.productPrice = productPrice;
     }
 
-    public int getProductQuantity() {
+    public String getProductQuantity() {
         return productQuantity;
     }
 
-    public void setProductQuantity(int productQuantity) {
+    public void setProductQuantity(String productQuantity) {
         this.productQuantity = productQuantity;
     }
 
