@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -19,14 +20,27 @@ public class ProductsActivity extends AppCompatActivity {
 
     private List<Product> productList;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_products);
 
+        Button returnButton = findViewById(R.id.return_button);
+
+
+
         String username = getIntent().getStringExtra("username");
 
         ListView listView = findViewById(R.id.products_in_inventory);
+
+        returnButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         new Thread(new Runnable() {
             @Override

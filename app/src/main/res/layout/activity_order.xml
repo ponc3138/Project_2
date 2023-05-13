@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background2"
+    tools:context=".OrderActivity">
+
+    <TextView
+        android:id="@+id/success_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="50dp"
+        android:gravity="center"
+        android:text="Payment Successful!"
+        android:textColor="@color/white"
+        android:textSize="35sp"
+        android:textStyle="bold" />
+
+
+
+    <Button
+        android:id="@+id/sign_out"
+        android:layout_width="119dp"
+        android:layout_height="59dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="276dp"
+        android:layout_marginBottom="23dp"
+        android:backgroundTint="@color/material_on_surface_stroke"
+        android:text="@string/sign_out" />
+
+    <Button
+        android:id="@+id/main_menu"
+        android:layout_width="119dp"
+        android:layout_height="59dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="242dp"
+        android:layout_marginEnd="51dp"
+        android:layout_marginBottom="23dp"
+        android:backgroundTint="@color/material_on_surface_stroke"
+        android:text="Main Menu" />
+
+    <TextView
+        android:id="@+id/thankyou"
+        android:layout_width="223dp"
+        android:layout_height="63dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="95dp"
+        android:layout_marginTop="167dp"
+        android:layout_marginEnd="93dp"
+        android:layout_marginBottom="500dp"
+        android:gravity="center"
+        android:text="Thank You!"
+        android:textColor="@color/white"
+        android:textSize="35sp"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>

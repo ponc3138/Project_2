@@ -26,4 +26,6 @@
     <string name="products">Products</string>
     <string name="add_item">Add Item</string>
     <string name="click_product_to_delete">Click Product to Delete</string>
+    <string name="card_number">Card Number</string>
+    <string name="PayNow">Pay Now</string>
 </resources>

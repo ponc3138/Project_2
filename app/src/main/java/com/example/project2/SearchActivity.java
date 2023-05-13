@@ -1,6 +1,8 @@
 package com.example.project2;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,12 +12,15 @@ import android.widget.Toast;
 public class SearchActivity extends AppCompatActivity {
 
     Button searchButton;
+    Button returnButton;
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
         searchButton = findViewById(R.id.search_message);
+        returnButton = findViewById(R.id.return_button);
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -44,6 +49,13 @@ public class SearchActivity extends AppCompatActivity {
 
                     }
                 }).start();
+            }
+        });
+
+        returnButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
 

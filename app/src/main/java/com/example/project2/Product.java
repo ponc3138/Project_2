@@ -6,6 +6,7 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "products")
 public class Product {
     @PrimaryKey(autoGenerate = true)
+
     private int id;
     private String productName;
     private double productPrice;
@@ -13,6 +14,7 @@ public class Product {
     private int productQuantity;
 
     private String productDetails;
+
 
 
     public Product(String productName, double productPrice, int productQuantity, String productDetails) {
