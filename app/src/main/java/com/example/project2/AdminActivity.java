@@ -14,6 +14,7 @@ public class AdminActivity extends AppCompatActivity {
 
     Button addItem;
     Button deleteItem;
+    Button updateItem;
     Dialog dialog;
 
 
@@ -99,6 +100,14 @@ public class AdminActivity extends AppCompatActivity {
                     }
                 });
                 dialog.show();
+            }
+        });
+
+        updateItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AdminActivity.this, UpdateItemActivity.class);
+                startActivity(intent);
             }
         });
 

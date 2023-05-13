@@ -28,4 +28,5 @@
     <string name="click_product_to_delete">Click Product to Delete</string>
     <string name="card_number">Card Number</string>
     <string name="PayNow">Pay Now</string>
+    <string name="click_product_to_update">Click product to Update</string>
 </resources>
