@@ -14,8 +14,7 @@ public class AdminActivity extends AppCompatActivity {
 
     Button addItem;
     Button deleteItem;
-
-    Button removeUser;
+    Button updateItem;
     Dialog dialog;
 
 
@@ -26,7 +25,6 @@ public class AdminActivity extends AppCompatActivity {
 
         addItem = findViewById(R.id.add_item_button);
         deleteItem = findViewById(R.id.delete_item_button);
-        removeUser = findViewById(R.id.delete_user_button);
 
         addItem.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,18 +103,18 @@ public class AdminActivity extends AppCompatActivity {
             }
         });
 
-        deleteItem.setOnClickListener(new View.OnClickListener() {
+        updateItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AdminActivity.this, DeleteItemActivity.class);
+                Intent intent = new Intent(AdminActivity.this, UpdateItemActivity.class);
                 startActivity(intent);
             }
         });
 
-        removeUser.setOnClickListener(new View.OnClickListener() {
+        deleteItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AdminActivity.this, RemoveUserActivity.class);
+                Intent intent = new Intent(AdminActivity.this, DeleteItemActivity.class);
                 startActivity(intent);
             }
         });
