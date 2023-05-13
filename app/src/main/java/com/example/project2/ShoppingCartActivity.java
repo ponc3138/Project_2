@@ -26,7 +26,7 @@ public class ShoppingCartActivity extends AppCompatActivity {
         SharedPreferences prefs = getSharedPreferences("MyApp", MODE_PRIVATE);
         userId = prefs.getString("UserId", "defaultUserId");
 
-        cartItems = getCartItemsDb(userId);
+//        cartItems = getCartItemsDb(userId);
 
         ListView listView = findViewById(R.id.cart_items);
 
@@ -78,7 +78,7 @@ public class ShoppingCartActivity extends AppCompatActivity {
 
     }
 
-    private ArrayList<ShoppingCart> getCartItemsDb(String userId){
-
-    }
+//    private ArrayList<ShoppingCart> getCartItemsDb(String userId){
+//
+//    }
 }
