@@ -25,6 +25,7 @@ public class AdminActivity extends AppCompatActivity {
 
         addItem = findViewById(R.id.add_item_button);
         deleteItem = findViewById(R.id.delete_item_button);
+        updateItem = findViewById(R.id.update_item_button);
 
         addItem.setOnClickListener(new View.OnClickListener() {
             @Override
