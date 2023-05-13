@@ -3,6 +3,7 @@ package com.example.project2;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -15,11 +16,17 @@ import java.util.List;
 public class ShoppingCartActivity extends AppCompatActivity {
 
     List<ShoppingCart> cartItems;
+    private String userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shoppingcart);
+
+        SharedPreferences prefs = getSharedPreferences("MyApp", MODE_PRIVATE);
+        userId = prefs.getString("UserId", "defaultUserId");
+
+        cartItems = getCartItemsDb(userId);
 
         ListView listView = findViewById(R.id.cart_items);
 
@@ -68,6 +75,10 @@ public class ShoppingCartActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+    }
+
+    private ArrayList<ShoppingCart> getCartItemsDb(String userId){
 
     }
 }
